@@ -1,0 +1,11 @@
+#base image
+
+FROM openjdk:8
+
+ADD target/docker-Webservice.jar  /src/java/docker-Webservice.jar
+
+EXPOSE 8084
+
+WORKDIR /src/java
+
+ENTRYPOINT ["java", "-jar", "docker-Webservice.jar"]
